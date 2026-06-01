@@ -254,7 +254,7 @@ Add screenshots of:
 screenshots:
 
 # \# Lighthouse
-#<img width="844" height="216" alt="image" src="https://github.com/user-attachments/assets/be7a1988-e255-4e22-839e-8afdfd6cba16" />
+<img width="844" height="216" alt="image" src="https://github.com/user-attachments/assets/be7a1988-e255-4e22-839e-8afdfd6cba16" />
 
 # \# Dashboard
 
