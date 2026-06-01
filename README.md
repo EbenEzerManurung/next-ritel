@@ -253,30 +253,29 @@ Add screenshots of:
 
 screenshots:
 
-# \# Lighthouse
+#\# Lighthouse
 #<img width="844" height="216" alt="image" src="https://github.com/user-attachments/assets/be7a1988-e255-4e22-839e-8afdfd6cba16" />
 
 # \# Dashboard
 
-# <img width="1891" height="927" alt="image" src="https://github.com/user-attachments/assets/c7faa538-d75b-4c43-9dce-c2a44f991dfc" />
+<img width="1891" height="927" alt="image" src="https://github.com/user-attachments/assets/c7faa538-d75b-4c43-9dce-c2a44f991dfc" />
 
 <img width="1909" height="913" alt="image" src="https://github.com/user-attachments/assets/34cf6d81-2deb-467b-a13b-b8b7e6c02748" />
 
 # \# Customer
 
-# <img width="1912" height="936" alt="image" src="https://github.com/user-attachments/assets/388dd92f-8c3e-44e5-b988-bf3304bd4ba9" />
-
+<img width="1912" height="936" alt="image" src="https://github.com/user-attachments/assets/388dd92f-8c3e-44e5-b988-bf3304bd4ba9" />
 
 # \# Produk
-#<img width="1896" height="931" alt="image" src="https://github.com/user-attachments/assets/cdaa4d70-7eb6-44c5-8c12-e2c792fe4198" />
+<img width="1896" height="931" alt="image" src="https://github.com/user-attachments/assets/cdaa4d70-7eb6-44c5-8c12-e2c792fe4198" />
 
 
 # \# Transaksi
-#<img width="1909" height="925" alt="image" src="https://github.com/user-attachments/assets/0be5a383-e21a-4500-a4e9-83459c54307b" />
+<img width="1909" height="925" alt="image" src="https://github.com/user-attachments/assets/0be5a383-e21a-4500-a4e9-83459c54307b" />
 
 
 # \# Riwayat Transaksi (Transaction history)
-#<img width="1914" height="934" alt="image" src="https://github.com/user-attachments/assets/d34efb59-013d-48ab-9c8e-82d0768556af" />
+<img width="1914" height="934" alt="image" src="https://github.com/user-attachments/assets/d34efb59-013d-48ab-9c8e-82d0768556af" />
 
 
 ```
