@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Icons</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .icon { text-align: center; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+        button { margin-top: 10px; padding: 5px 10px; background: #3B82F6; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Generate Icons untuk PWA</h1>
+    <div class="container" id="icons"></div>
+
+    <script>
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        const container = document.getElementById('icons');
+        
+        sizes.forEach(size => {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#3B82F6';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `bold ${size/2}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('R', size/2, size/2);
+            
+            const div = document.createElement('div');
+            div.className = 'icon';
+            div.innerHTML = `
+                <img src="${canvas.toDataURL()}" width="64" height="64">
+                <br>
+                <button onclick="downloadIcon('${canvas.toDataURL()}', ${size})">Download icon-${size}.png</button>
+                <p>${size}x${size}</p>
+            `;
+            container.appendChild(div);
+            
+            window[`download_${size}`] = canvas.toDataURL();
+        });
+        
+        function downloadIcon(dataUrl, size) {
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = dataUrl;
+            link.click();
+        }
+    </script>
+</body>
+</html>

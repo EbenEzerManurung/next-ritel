@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Icons</title>
+    <style>
+        body { font-family: Arial; padding: 20px; text-align: center; }
+        .container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .icon-card { border: 1px solid #ddd; padding: 15px; border-radius: 10px; text-align: center; }
+        canvas { border: 1px solid #ccc; border-radius: 10px; margin-bottom: 10px; }
+        button { background: #3B82F6; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #2563eb; }
+    </style>
+</head>
+<body>
+    <h1>🎨 Generate Icons untuk PWA</h1>
+    <p>Klik tombol download untuk setiap icon</p>
+    <div class="container" id="icons"></div>
+
+    <script>
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        const container = document.getElementById('icons');
+        
+        sizes.forEach(size => {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Background biru
+            ctx.fillStyle = '#3B82F6';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Tulisan R putih
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = `bold ${size/2}px Arial, Helvetica, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('R', size/2, size/2);
+            
+            const card = document.createElement('div');
+            card.className = 'icon-card';
+            card.innerHTML = `
+                <canvas width="${size}" height="${size}" style="width: 80px; height: 80px;"></canvas>
+                <br>
+                <button onclick="downloadIcon(${size})">⬇️ Download icon-${size}.png</button>
+                <p>${size}x${size}</p>
+            `;
+            
+            const previewCanvas = card.querySelector('canvas');
+            previewCanvas.getContext('2d').drawImage(canvas, 0, 0, size, size, 0, 0, 80, 80);
+            
+            // Store canvas data
+            window[`icon_${size}`] = canvas;
+            container.appendChild(card);
+        });
+        
+        function downloadIcon(size) {
+            const canvas = window[`icon_${size}`];
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>
